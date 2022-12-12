@@ -41,9 +41,9 @@ public class SpawnDrones : MonoBehaviour
         }
     }
 
-     private IEnumerator SpawnDrone()
+     private void SpawnDrone()
     {
-        yield return new WaitForSeconds(5);
+        //yield return new WaitForSeconds(5);
         GameObject[] houses = FindObjectsOfType<GameObject>().Where(gameObject => gameObject.tag == "Houses").ToArray();
         goalhouse = houses[Random.Range(0, houses.Length)].transform.position;
         newDrone = Instantiate(dronePrefab, transform.position, new Quaternion());
